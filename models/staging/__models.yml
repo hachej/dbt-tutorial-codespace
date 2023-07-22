@@ -8,7 +8,10 @@ models:
         description: The unique key for each customer.
         tests:
           - not_null
-          - unique
+          - unique:
+              config:
+                store_failures: true  # always store failures
+        
 
   - name: stg_locations
     description: List of open locations with basic cleaning and transformation applied, one row per location.
